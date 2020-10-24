@@ -13,9 +13,7 @@ const Introduction = ({text, setIntroDescription, imgText, setIntroImage}) => {
         <div className="d-flex justify-content-left">
             <Card className='col-lg-4'>
                 <Card.Body>
-                    <Row>
                     <Card.Title>Welcome to my blog!</Card.Title>&nbsp;
-                    </Row>
                     <Form onSubmit={e => {
                         e.preventDefault()
                         setIntroImage(inputImg.value)

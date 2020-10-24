@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { Alert, Button, Card, Form, Modal, Row } from 'react-bootstrap';
+import { Button, Card, Form, Modal, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { connect } from 'react-redux'
 import { createPost } from '../actions'
-import ActualPost from './ActualPost'
 
-const Posts = ({posts, createPost}) => {
+const Posts = ({createPost}) => {
     const [isOpen, setIsOpen] = useState(false)
     let inputTitle, inputImage, inputDesc
 
@@ -22,8 +21,8 @@ const Posts = ({posts, createPost}) => {
                             <Modal.Body>
                                 <Form onSubmit={e => {
                                     e.preventDefault()
-                                    console.log("Title: " + inputTitle.value + " Image Link: " + inputImage.value + " Description: " + inputDesc.value)
-                                    createPost(inputTitle.value, inputImage.value, inputDesc.value) //Creating error here goes to setImage??
+                                    // console.log("Title: " + inputTitle.value + " Image Link: " + inputImage.value + " Description: " + inputDesc.value)
+                                    createPost(inputTitle.value, inputImage.value, inputDesc.value)
                                     setIsOpen(false)
                                 }}>
                                     <Form.Group>
@@ -48,7 +47,7 @@ const Posts = ({posts, createPost}) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createPost: postList => dispatch(createPost(postList))
+        createPost: posts => dispatch(createPost(posts))
     }
 }
 

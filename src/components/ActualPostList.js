@@ -1,10 +1,13 @@
 import React from 'react'
 import ActualPost from './ActualPost'
 import { connect } from 'react-redux'
+import { createPost } from '../actions'
 
-const ActualPostList = ({posts}) => {
-    posts.map(posts => <ActualPost {...posts}/>) 
-}
+const ActualPostList = ({posts}) => (
+    posts.map(posts => 
+        <ActualPost
+            key={posts.id} {...posts}/>)
+)
 
 const mapStateToProps = state => ({
     posts: state.posts
@@ -12,7 +15,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        createPost: postList => dispatch(createPost(postList))
+        createPost: posts => dispatch(createPost(posts))
     }
 }
 

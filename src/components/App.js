@@ -7,7 +7,7 @@ const App = () => (
     <div> 
       <Introduction />
       <Posts />
-      {/* <ActualPostList /> */}
+      <ActualPostList />
     </div>
   )
 
