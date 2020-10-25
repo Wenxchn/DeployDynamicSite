@@ -21,5 +21,14 @@ export const createPost = (title, image, description) => ({
 })
 
 export const deletePost = (id) => ({
+    type: 'DELETE_POST',
     id,
+})
+
+export const editPost = (id, title, image, description) => ({
+    type: 'EDIT_POST',
+    id,
+    title,
+    image,
+    description
 })

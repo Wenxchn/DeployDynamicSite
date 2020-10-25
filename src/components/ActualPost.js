@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import { Button, Card, Form, Modal } from 'react-bootstrap'
+import { deletePost, editPost } from '../actions'
 
-const ActualPost = ({id, title, image, description}) => {
+const ActualPost = ({id, title, image, description, deletePost, editPost}) => {
     let inputTitle, inputImage, inputDesc
     const [isOpen, setIsOpen] = useState(false)
     
@@ -23,6 +25,7 @@ const ActualPost = ({id, title, image, description}) => {
                             <Modal.Body>
                                 <Form onSubmit={e => {
                                     e.preventDefault()
+                                    editPost(id, inputTitle.value, inputImage.value, inputDesc.value)
                                     setIsOpen(false)
                                 }}>
                                     <Form.Group>
@@ -38,11 +41,18 @@ const ActualPost = ({id, title, image, description}) => {
                                 </Form>
                             </Modal.Body>
                         </Modal>
-                        <Button className='btn btn-light btn-sm' onClick={() => console.log('deleted!')}> Delete </Button>
+                        <Button className='btn btn-light btn-sm' onClick={() => deletePost(id)}> Delete </Button>
                     </div>
                 </Card.Footer>
             </Card>
         </>
 )}
 
-export default ActualPost
+const mapDispatchToProps = dispatch => {
+    return {
+        deletePost: id => dispatch(deletePost(id)),
+        editPost: (id, title, image, description) => dispatch(editPost(id, title, image, description))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(ActualPost)
