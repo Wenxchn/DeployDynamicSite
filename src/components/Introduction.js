@@ -18,8 +18,6 @@ const Introduction = ({text, setIntroDescription, imgText, setIntroImage}) => {
                         e.preventDefault()
                         setIntroImage(inputImg.value)
                         setIntroDescription(inputDescription.value)
-                        inputDescription.value = ''
-                        inputImg.value = ''
                     }}>
                         <Form.Group>
                             <Form.Label>Image</Form.Label>

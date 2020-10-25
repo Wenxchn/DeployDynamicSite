@@ -30,11 +30,11 @@ const ActualPost = ({id, title, image, description, deletePost, editPost}) => {
                                 }}>
                                     <Form.Group>
                                         <Form.Label>Title</Form.Label>
-                                        <Form.Control type='newTitle' placeholder='Enter Blog Title' ref={node => inputTitle = node}></Form.Control>
+                                        <Form.Control type='newTitle' placeholder='Enter Blog Title' defaultValue={title} ref={node => inputTitle = node}></Form.Control>
                                         <Form.Label>Image</Form.Label>
-                                        <Form.Control type='newImage' placeholder='Enter Image URL' ref={node => inputImage = node}></Form.Control>
+                                        <Form.Control type='newImage' placeholder='Enter Image URL' defaultValue={image} ref={node => inputImage = node}></Form.Control>
                                         <Form.Label>Description</Form.Label>
-                                        <Form.Control type='newDescription' placeholder='Enter Description' ref={node => inputDesc = node}></Form.Control>
+                                        <Form.Control type='newDescription' placeholder='Enter Description' defaultValue={description} ref={node => inputDesc = node}></Form.Control>
                                         <Button className='btn btn-dark btn-sm' type='submit'> Save </Button>&nbsp;&nbsp;
                                         <Button className='btn btn-dark btn-sm' onClick={() => setIsOpen(false)}> Cancel </Button>
                                     </Form.Group>
