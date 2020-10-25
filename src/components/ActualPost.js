@@ -11,7 +11,7 @@ const ActualPost = ({id, title, image, description, deletePost, editPost}) => {
         <>
             <Card border='dark' className='text-white bg-dark mb-3'>
                 <Card.Header className="text-center">
-                    <Card.Title>Post Number {id} : {title} </Card.Title>
+                    <Card.Title> {title} </Card.Title>
                 </Card.Header>
                 <Card.Body> 
                     <Card.Img src={image}/>
@@ -41,7 +41,7 @@ const ActualPost = ({id, title, image, description, deletePost, editPost}) => {
                                 </Form>
                             </Modal.Body>
                         </Modal>
-                        <Button className='btn btn-light btn-sm' onClick={() => deletePost(id)}> Delete </Button>
+                        <Button className='btn btn-light btn-sm' onClick={() => deletePost(id)}> Delete </Button> &nbsp;#{id}
                     </div>
                 </Card.Footer>
             </Card>
