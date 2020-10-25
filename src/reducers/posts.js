@@ -6,7 +6,9 @@ const createPost = (state = [], action) => {
         case 'DELETE_POST':
             return state.filter(({id}) => id !== action.id)
         case 'EDIT_POST':
-            return state // TODO
+            return state.map(createPost => 
+                (createPost.id === id) ? { id, title, image, description } : createPost
+            )
         default:
             return state
     }
