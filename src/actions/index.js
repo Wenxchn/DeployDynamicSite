@@ -13,10 +13,13 @@ export const setIntroImage = text => ({
 let nextId = 1
 
 export const createPost = (title, image, description) => ({
-    // Only title doesnt become undef
     type: 'CREATE_POST',
     id: nextId++,
     title,
     image,
     description
+})
+
+export const deletePost = (id) => ({
+    id,
 })

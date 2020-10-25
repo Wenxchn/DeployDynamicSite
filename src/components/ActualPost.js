@@ -23,7 +23,6 @@ const ActualPost = ({id, title, image, description}) => {
                             <Modal.Body>
                                 <Form onSubmit={e => {
                                     e.preventDefault()
-                                    console.log("Title: " + inputTitle.value + " Image Link: " + inputImage.value + " Description: " + inputDesc.value)
                                     setIsOpen(false)
                                 }}>
                                     <Form.Group>
@@ -39,7 +38,7 @@ const ActualPost = ({id, title, image, description}) => {
                                 </Form>
                             </Modal.Body>
                         </Modal>
-                        <Button className='btn btn-light btn-sm'> Delete </Button>
+                        <Button className='btn btn-light btn-sm' onClick={() => console.log('deleted!')}> Delete </Button>
                     </div>
                 </Card.Footer>
             </Card>
