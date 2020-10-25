@@ -13,7 +13,7 @@ const ActualPost = ({id, title, image, description}) => {
                 </Card.Header>
                 <Card.Body> 
                     <Card.Img src={image}/>
-                    {description} Image and Description still under development :(
+                    {description}
                 </Card.Body>
                 <Card.Footer>
                     <div className='btn-toolbar'>

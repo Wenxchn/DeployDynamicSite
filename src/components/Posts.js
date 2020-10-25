@@ -21,7 +21,6 @@ const Posts = ({createPost}) => {
                             <Modal.Body>
                                 <Form onSubmit={e => {
                                     e.preventDefault()
-                                    // console.log("Title: " + inputTitle.value + " Image Link: " + inputImage.value + " Description: " + inputDesc.value)
                                     createPost(inputTitle.value, inputImage.value, inputDesc.value)
                                     setIsOpen(false)
                                 }}>
@@ -47,7 +46,7 @@ const Posts = ({createPost}) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createPost: posts => dispatch(createPost(posts))
+        createPost: (title, image, desc) => dispatch(createPost(title, image, desc))
     }
 }
 
